@@ -1,0 +1,46 @@
+<div class="card-container">
+  <div class="candidate-card-selector">
+    <mat-form-field>
+      <mat-select [(value)]="selected" (selectionChange)="getcurrentVotes(selected)">
+        <mat-option *ngFor="let election of elections" [value]="election.value">
+          {{election.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div id="container">
+    <div ng2-carouselamos class="slides-wrapper" [items]="candidateVotes" [width]="900" [$prev]="prev" [$next]="next" [$item]="candidateVote">
+    </div>
+    <ng-template #prev>
+      <img src="assets/images/left-arrow.png" id="left" />
+    </ng-template>
+      <ng-template #next>
+        <img src="assets/images/right-arrow.png" id="right" />
+    </ng-template>
+        <ng-template #candidateVote let-candidateVote let-i="index">
+          <div class="candidate-card-cls">
+            <mat-card class="example-card">
+              <div class="candidate-card-header">
+                <mat-card-header class="candidate-card-header">
+                  <mat-card-title>{{ candidateVote.voteCount }} Votes</mat-card-title>
+                </mat-card-header>
+              </div>
+              <img mat-card-image [src]="candidateVote.candidateImageURL" alt="Photo of candidate">
+              <mat-card-content class="candidate-card-text">
+                <h3>{{ candidateVote.name }}</h3>
+              </mat-card-content>
+              <mat-card-actions>
+                <button class="voting-button" mat-button>VOTE</button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </ng-template>
+  </div>
+  <div class="static-inst">
+    <h2>Instructions:</h2>
+    <p>Join DISA in electing its newest executives followed by a short pizza party with some tunes and lots of delicious
+      pizza.
+      Please be advised that candidates who wish to run for a position will have to send their proof of good academic
+      standing (above 2.7 CGPA), and 250 words explaining why they should be elected and what they see
+      makes them stand out from all other candidates</p>
+  </div>

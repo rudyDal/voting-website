@@ -1,0 +1,27 @@
+<div class="basic-container">
+<div class="home-icon-container">
+<button mat-icon-button>
+  <mat-icon>how_to_vote</mat-icon>
+  <span>Smart Vote</span>
+</button>
+</div>
+<div class="menu-icon-container">
+<button class="btn" mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>person_outline</mat-icon>
+</button>
+</div>
+<mat-menu #menu="matMenu">
+  <div mat-menu-item>
+    <mat-icon>home</mat-icon>
+    <span>{{voter.ethAddress}}</span>
+  </div>
+  <button mat-menu-item>
+    <mat-icon>person</mat-icon>
+    <span>{{voter.name}}</span>
+  </button>
+  <div mat-menu-item>
+    <mat-icon>description</mat-icon>
+    <span>Profile Documents</span>
+  </div>
+</mat-menu>
+</div>

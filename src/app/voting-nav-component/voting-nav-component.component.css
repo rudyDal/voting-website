@@ -1,0 +1,14 @@
+.basic-container{
+	padding: 30px;
+	background-color: #C0C0C0;
+}
+.home-icon-container{
+	float: left;
+	margin-bottom: 5px;
+}
+.menu-icon-container{
+	float: right;
+}
+mat-icon{
+	margin-bottom: 10px;
+}
